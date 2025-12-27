@@ -2552,6 +2552,9 @@ static common_chat_params common_chat_params_init_without_tools(const common_cha
     } else {
         data.grammar = inputs.grammar;
     }
+    if (string_ends_with(data.prompt, "<think>")) {
+        data.thinking_forced_open = true;
+    }
     return data;
 }
 
